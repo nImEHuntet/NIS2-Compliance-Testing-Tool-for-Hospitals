@@ -4,20 +4,20 @@
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
 ![Status](https://img.shields.io/badge/status-research%20prototype-green.svg)
 
-A transparent, deterministic, **locally-run** self-assessment tool that measures a healthcare organisation's readiness for the EU **NIS2 Directive** (Directive (EU) 2022/2555). It scores an organisation against **16 Risk Management Measures (RMMs)** and **30 evidence-weighted questions** mapped directly to NIS2 Article 21 and the Irish NCSC's RMM taxonomy, then generates a board-ready report with a maturity tier, prioritised gap analysis and a **30-60-90 day remediation roadmap**.
+A transparent, deterministic, **locally-run** self-assessment tool that measures a healthcare organization's readiness for the EU **NIS2 Directive** (Directive (EU) 2022/2555). It scores an organization against **16 Risk Management Measures (RMMs)** and **30 evidence-weighted questions** mapped directly to NIS2 Article 21 and the Irish NCSC's RMM taxonomy, and then generates a board-ready report with a maturity tier, a prioritized gap analysis, and a **30-60-90-day remediation roadmap**.
 
-It runs entirely on your own machine and **never ingests patient or production data** — only *references* to evidence (e.g. a policy ID) — so it stays clear of GDPR concerns and can be run inside a segregated clinical network.
+It runs entirely on your own machine, **never ingests patient or production data**, and only *references* evidence (e.g., a policy ID). This means that it stays clear of GDPR concerns and can be run inside a segregated clinical network.
 
-> Developed as the artefact for an MSc Cybersecurity thesis (*NIS2 Compliance and Cybersecurity Resilience in Critical Healthcare Infrastructure*, Munster Technological University). Tailored to healthcare but re-parameterisable for other NIS2 sectors.
+> Developed as the artifact for an MSc Cybersecurity thesis (*NIS2 Compliance and Cybersecurity Resilience in Critical Healthcare Infrastructure*, Munster Technological University). Tailored to healthcare but re-parameterisable for other NIS2 sectors.
 
 ---
 
 ## Key features
 
-- **Regulator-aligned:** 16 RMMs map 1:1 to the NCSC's published Risk Management Measures and back to NIS2 Article 21 / 20 / 23.
+- **Regulator-aligned:** 16 RMMs map 1:1 to the NCSC's published Risk Management Measures and back to NIS2 Articles 21 / 20 / 23.
 - **Evidence-weighted scoring:** every answer is scaled by an *evidence-assurance* multiplier, so an unproven "Yes" scores no better than a well-evidenced "Partial".
-- **Deterministic & auditable:** no AI, no black box — any score can be reconstructed by hand.
-- **Board-ready PDF report:** executive risk statement, radar/bar charts, prioritised remediation with owners, 30-60-90 roadmap, per-system RTO/RPO recovery objectives, and 24-hour incident-reporting readiness.
+- **Deterministic & auditable:** no AI, no black box. Any score can be reconstructed by hand.
+- **Board-ready PDF report:** executive risk statement, radar/bar charts, prioritized remediation with owners, 30-60-90 roadmap, per-system RTO/RPO recovery objectives, and 24-hour incident-reporting readiness.
 - **Privacy by design:** local-only, no network calls, no sensitive data ingested.
 - **Reproducible:** every assessment is defined by a JSON dataset and regenerates identical output.
 
@@ -59,15 +59,15 @@ pip install matplotlib numpy reportlab
 python run_all_cases.py
 ```
 
-This reads every dataset in `JSON Examples/`, prints a score summary, and writes each case's charts, CSV and PDF report — plus two cross-case comparison charts — into `Outputs/`.
+This reads every dataset in `JSON Examples/`, prints a score summary, and writes each case's charts, CSV, and PDF report. In addition, it writes two cross-case comparison charts to `Outputs/`.
 
-### 2. Assess a single organisation from a dataset
+### 2. Assess a single organization from a dataset
 
 ```bash
 python NIS2_Compliance_Test.py --responses "JSON Examples/regional_hospital_assessment.json"
 ```
 
-Prints the overall score, maturity tier and per-RMM breakdown to the terminal, and writes a CSV, two charts and a PDF report to the current folder.
+Prints the overall score, maturity tier, and per-RMM breakdown to the terminal, and writes a CSV, two charts, and a PDF report to the current folder.
 
 ### 3. Interactive assessment (answer the 30 questions yourself)
 
@@ -81,24 +81,24 @@ You'll be prompted for each question's response (Y/P/N), an evidence reference, 
 
 | Flag | Description | Default |
 |---|---|---|
-| `--responses PATH` | Score from a saved JSON responses/evidence dataset | — |
+| `--responses PATH` | Score from a saved JSON responses/evidence dataset | - |
 | `--org NAME` | Organisation name | `Regional Hospital` |
 | `--org-size SIZE` | `Small` / `Medium` / `Large` | `Medium` |
 | `--target PCT` | Target maturity percentage | `75` (Tier 3) |
 | `--schema PATH` | Load an external questionnaire schema (JSON) | built-in |
-| `--demo` | Run a non-interactive synthetic demo profile | — |
-| `--sensitivity` | Report the score at Partial = 0.5 / 1.0 / 2.0 | — |
+| `--demo` | Run a non-interactive synthetic demo profile | - |
+| `--sensitivity` | Report the score at Partial = 0.5 / 1.0 / 2.0 | - |
 | `--partial VALUE` | Override the "Partial" score value | `1.0` |
 
 ---
 
 ## Outputs
 
-For each assessment the tool produces:
+For each assessment, the tool produces:
 
-- **PDF report** — cover (score + tier), "how to read this score", executive risk statement, RMM bar chart, category radar chart, prioritised remediation table (owner / due / evidence), 30-60-90 day roadmap, critical-system RTO/RPO table + DR test schedule, 24-hour early-warning readiness, consistency checks, and a per-question appendix.
-- **CSV** — a per-question audit trail (RMM, article, weight, response, assurance, evidence, score).
-- **PNG charts** — per-RMM implementation scores (bar) and a maturity profile (radar).
+- **PDF report** - cover (score + tier), "how to read this score", executive risk statement, RMM bar chart, category radar chart, prioritized remediation table (owner / due / evidence), 30-60-90 day roadmap, critical-system RTO/RPO table + DR test schedule, 24-hour early-warning readiness, consistency checks, and a per-question appendix.
+- **CSV** - a per-question audit trail (RMM, article, weight, response, assurance, evidence, score).
+- **PNG charts** - per-RMM implementation scores (bar) and a maturity profile (radar).
 
 ---
 
@@ -125,7 +125,7 @@ An assessment dataset is a small JSON file. Each answer records the response, th
 - `assurance` ∈ `None` | `Low` | `Medium` | `High`
 - `qid` = question number 1–30 (see the questionnaire in `NIS2_Compliance_Test.py`)
 
-Copy an example from `JSON Examples/` and edit it to assess your own organisation.
+Copy an example from `JSON Examples/` and edit it to assess your own organization.
 
 ---
 
@@ -144,10 +144,10 @@ Critical controls (MFA, 24-hour reporting) carry a higher weight. The overall pe
 
 | Tier | Band | Meaning |
 |---|---|---|
-| **Tier 1 — Initial** | 0–49% | Non-compliant; ad-hoc, reactive |
-| **Tier 2 — Managed** | 50–74% | Foundational controls; material gaps |
-| **Tier 3 — Defined** | 75–89% | Documented, implemented, tested — **target for essential entities** |
-| **Tier 4 — Optimised** | 90–100% | Proactive, threat-led; beyond the baseline |
+| **Tier 1 - Initial** | 0–49% | Non-compliant; ad-hoc, reactive |
+| **Tier 2 - Managed** | 50–74% | Foundational controls; material gaps |
+| **Tier 3 - Defined** | 75–89% | Documented, implemented, tested. This is the **target for essential entities** |
+| **Tier 4 - Optimised** | 90–100% | Proactive, threat-led; beyond the baseline |
 
 ---
 
@@ -157,21 +157,21 @@ Running the three bundled datasets demonstrates that the model differentiates cl
 
 | Organisation | Overall | Tier |
 |---|---|---|
-| Specialised Diagnostic Clinic (heavily outsourced) | 17.9% | Tier 1 — Initial |
-| Regional Hospital | 56.2% | Tier 2 — Managed |
-| Metropolitan Teaching Hospital | 83.5% | Tier 3 — Defined |
+| Specialised Diagnostic Clinic (heavily outsourced) | 17.9% | Tier 1 - Initial |
+| Regional Hospital | 56.2% | Tier 2 - Managed |
+| Metropolitan Teaching Hospital | 83.5% | Tier 3 - Defined |
 
-The Regional Hospital dataset is an evidence-referenced example; the Teaching Hospital and Specialised Clinic are **transparently-labelled synthetic profiles** (stated in each file's `data_source`), constructed from public benchmarks for illustration.
+The Regional Hospital dataset is an evidence-referenced example; the Teaching Hospital and Specialized Clinic are **transparently labeled synthetic profiles** (as stated in each file's `data_source`) constructed from public benchmarks for illustration.
 
 ---
 
 ## Privacy & data handling
 
-The tool processes **no patient or production data**. Assessors enter responses and *references* to evidence (document identifiers), which stay on the local machine. There are no network calls and nothing is uploaded to any external or cloud service.
+The tool processes **no patient or production data**. Assessors enter responses and *references* to evidence (document identifiers), which stay on the local machine. There are no network calls, and nothing is uploaded to any external or cloud service.
 
 ## Disclaimer
 
-This is a **readiness self-assessment aid**, not a certification, an audit, or legal advice. Scores are relative indicators to guide prioritisation, not a definitive statement of legal compliance. NIS2 and its national transposition are evolving; verify requirements against current official guidance (e.g. the Irish NCSC and ENISA) and seek professional advice for compliance decisions.
+This is a **readiness self-assessment aid**, not a certification, an audit, or legal advice. Scores are relative indicators to guide prioritization, not a definitive statement of legal compliance. NIS2 and its national transposition are evolving; verify requirements against current official guidance (e.g. the Irish NCSC and ENISA) and seek professional advice for compliance decisions.
 
 ## How to cite
 
