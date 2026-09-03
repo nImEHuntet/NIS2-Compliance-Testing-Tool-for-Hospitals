@@ -1,0 +1,34 @@
+Organization,Specialized Diagnostic Clinic
+Assessment Date,2026-06-15T00:00:00
+
+Question ID,RMM,Article,Question Text,Weight,Response,Assurance,Evidence,Score
+1,RMM001,Art.20(1),Is there a designated officer for NIS2 compliance?,1.0,No,High,No designated NIS2 compliance officer; responsibility informally held by Practice Manager; no appointment record.,0.00
+2,RMM002,Art.20(1),Does the board explicitly approve cyber measures?,1.5,No,High,No board-level cyber oversight; directors rely on the IT managed-service provider (MSP); no cyber item in board minutes.,0.00
+3,RMM002,Art.20(1),Is there an approved cyber budget for 18 months?,1.0,No,Medium,No ring-fenced cyber budget; security spend bundled into the monthly MSP retainer (MSP-CON-2024).,0.00
+4,RMM002,Art.20(2),Do board members undergo mandatory cyber training?,1.0,No,High,No board or director cyber-governance training undertaken.,0.00
+5,RMM003,Art.21(2)(a),Is there a documented Security Policy (ISMS)?,1.5,Partial,Medium,Generic acceptable-use and IT policy supplied by MSP template (MSP-POL-001); not tailored or formally adopted.,1.50
+6,RMM003,Art.21(2),Does policy cover all NIS2 risk areas?,1.0,Partial,Low,"MSP template covers acceptable use and basic access; supply chain, cryptography, continuity and measurement areas absent.",1.00
+7,RMM004,Art.21(2)(a),Are risk assessments conducted annually?,1.5,Partial,Low,MSP performs informal annual review; no documented ISO 27005-style risk assessment owned by the clinic.,1.50
+8,RMM004,Art.21(2)(a),"Are critical assets (e.g., EHR) formally identified?",1.0,Partial,Medium,"Key systems known informally (PACS/RIS, billing); no formal critical-asset register or classification.",1.00
+9,RMM005,Art.21(2)(f),Are measures audited/tested annually?,1.0,No,High,No independent control audit or effectiveness testing on record.,0.00
+10,RMM005,Art.21(2)(a),Is there a process to update measures post-incident?,1.0,Partial,Low,MSP applies fixes reactively after issues; no documented post-incident review owned by the clinic.,1.00
+11,RMM006,Art.21(2)(e),Is patching performed within defined SLAs?,1.5,Yes,Medium,"MSP applies OS/security patching under managed-service SLA (MSP-SLA-2024, monthly cycle); clinic does not verify independently.",6.00
+12,RMM006,Art.21(2)(c),Are backups tested for restorability annually?,1.5,Partial,Low,MSP runs cloud backups; clinic has never witnessed or signed off a restore test.,1.50
+13,RMM006,Art.21(2)(g),Is cyber hygiene training mandatory for all staff?,1.0,Partial,Low,Ad-hoc phishing awareness emails; no mandatory enrolment or completion tracking.,1.00
+14,RMM007,Art.21(2)(i),Is the asset inventory up-to-date?,1.0,Partial,Low,"MSP holds a partial device list; no clinic-maintained, reconciled inventory.",1.00
+15,RMM008,Art.21(2)(i),Are background checks performed for sensitive roles?,1.0,Yes,Medium,Pre-employment checks for clinical staff via HR; references and qualification checks retained.,4.00
+16,RMM008,Art.21(2)(i),Are access rights revoked immediately upon exit?,1.0,Partial,Low,"Leaver access removal raised by email to MSP; no SLA, occasional delays observed.",1.00
+17,RMM009,Art.21(2)(j),Is MFA enforced for ALL remote/admin access?,2.0,Partial,Medium,MFA enabled on Microsoft 365 email and VPN; not enforced on PACS/RIS admin or MSP remote-management tooling.,2.00
+18,RMM009,Art.21(2)(j),Is 'Least Privilege' strictly enforced?,1.0,Partial,Low,Some role separation between clinical and admin staff; shared and over-privileged accounts still common; no least-privilege review.,1.00
+19,RMM010,Art.21(2),Are physical server rooms secured?,1.0,Yes,Medium,Primary systems hosted in MSP/cloud data centre with physical security; on-site comms cabinet lockable.,4.00
+20,RMM011,Art.21(2)(h),Is patient data encrypted at rest?,1.5,Partial,Low,Cloud-hosted data encrypted by provider default; local imaging shares and some endpoints unencrypted.,1.50
+21,RMM011,Art.21(2)(h),Is data encrypted in transit (TLS)?,1.0,Yes,Medium,HTTPS/TLS for hosted applications and portal; SFTP for external image exchange.,4.00
+22,RMM012,Art.21(2)(d),Do supplier contracts include security SLAs?,1.5,Partial,Low,"MSP master services agreement exists but lacks explicit security SLAs, breach-notification or right-to-audit clauses.",1.50
+23,RMM012,Art.21(2)(d),Are critical vendors risk-assessed?,1.0,No,Medium,MSP and software vendors not formally risk-assessed; no due-diligence questionnaires retained.,0.00
+24,RMM013,Art.21(2)(e),Is security built into system acquisition?,1.0,Partial,Low,Informal vendor selection considers data-handling at a basic level; no documented secure-acquisition gate.,1.00
+25,RMM014,Art.21(2)(b),Is there a documented Incident Response Plan?,1.5,No,High,No clinic-owned incident response plan; assumption that the MSP 'will handle it'.,0.00
+26,RMM014,Art.21(2)(b),Has the IRP been tested (tabletop) in 12 months?,1.0,No,High,No incident exercise or tabletop ever conducted.,0.00
+27,RMM015,Art.23(3),Can you submit an 'Early Warning' within 24h?,2.0,No,High,No capability or process to submit a 24h NIS2 early warning; no awareness of CSIRT contact route.,0.00
+28,RMM015,Art.21(2)(b),Are detection mechanisms (IDS/SIEM) in place?,1.0,Yes,Low,MSP provides basic endpoint protection and log monitoring; no clinic visibility of alerts or coverage.,4.00
+29,RMM016,Art.21(2)(c),Is there a Business Continuity Plan with RTOs?,1.5,No,High,No business continuity plan with RTO/RPO; downtime procedures undocumented.,0.00
+30,RMM016,Art.21(2)(c),Are DR procedures tested annually?,1.5,No,High,No disaster-recovery test performed or evidenced.,0.00

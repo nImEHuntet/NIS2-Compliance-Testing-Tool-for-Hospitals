@@ -1,0 +1,34 @@
+Organization,Regional Hospital
+Assessment Date,2026-06-09T00:00:00
+
+Question ID,RMM,Article,Question Text,Weight,Response,Assurance,Evidence,Score
+1,RMM001,Art.20(1),Is there a designated officer for NIS2 compliance?,1.0,Yes,Medium,"Appointment letter 'NIS2 Compliance Officer' (S. Haran), ref HR-APP-2025-114, dated 2025-11-03; owner: HR Director; stored in DMS/Governance/NIS2 (role not yet board-ratified).",4.00
+2,RMM002,Art.20(1),Does the board explicitly approve cyber measures?,1.5,Partial,High,"Board Minutes ref BM-2026-Q1, 2026-02-18, agenda item 7 'Cyber Security Measures - Approval'; owner: Company Secretary; BoardPortal.",1.50
+3,RMM002,Art.20(1),Is there an approved cyber budget for 18 months?,1.0,No,Low,Draft Capital Budget FY2026 (FIN-BUD-2026 v0.4); cyber line funded for 6 of 18 months only; owner: CFO; Finance DMS.,0.00
+4,RMM002,Art.20(2),Do board members undergo mandatory cyber training?,1.0,Partial,Low,LMS completion report LMS-RPT-2026-02 (2026-02-28): board cyber module 45% complete; owner: L&D Manager.,1.00
+5,RMM003,Art.21(2)(a),Is there a documented Security Policy (ISMS)?,1.5,Yes,High,"Information Security Policy ISMS-POL-001 v2.3, approved 2026-01-20; owner: CISO; stored in DMS/ISMS.",6.00
+6,RMM003,Art.21(2),Does policy cover all NIS2 risk areas?,1.0,No,Medium,ISMS gap analysis GAP-2026-03 (2026-03-12): supply-chain and cryptography sections incomplete; owner: CISO.,0.00
+7,RMM004,Art.21(2)(a),Are risk assessments conducted annually?,1.5,Yes,High,"Enterprise Risk Assessment RA-2026-001, 2026-02-05 (ISO 27005 method); owner: Risk Manager; GRC platform.",6.00
+8,RMM004,Art.21(2)(a),"Are critical assets (e.g., EHR) formally identified?",1.0,Yes,High,"Critical Asset Register CAR-2026 v1.2, 2026-02-10 (EHR, PACS, LIS classified Tier 1); owner: IT Asset Manager.",4.00
+9,RMM005,Art.21(2)(f),Are measures audited/tested annually?,1.0,No,High,No independent control audit on record; last internal review IR-2024-09 (>12 months old); owner: Internal Audit.,0.00
+10,RMM005,Art.21(2)(a),Is there a process to update measures post-incident?,1.0,Yes,High,Post-Incident Review procedure PROC-IR-004 v1.1; worked example PIR-2025-21 closure actions; owner: SOC Lead.,4.00
+11,RMM006,Art.21(2)(e),Is patching performed within defined SLAs?,1.5,Partial,High,"Patch Management Standard ITS-STD-007 v1.0 (availability SLA 99.5%, no risk-based vulnerability SLA); Intune/WSUS compliance reports Q1-2026; owner: IT Operations.",1.50
+12,RMM006,Art.21(2)(c),Are backups tested for restorability annually?,1.5,No,High,"Backup Policy BKP-POL-002; Veeam job logs confirm backups run, but no restore test recorded in 12 months; owner: Infrastructure Lead.",0.00
+13,RMM006,Art.21(2)(g),Is cyber hygiene training mandatory for all staff?,1.0,Partial,High,Security Awareness report LMS-RPT-2026-03: 68% staff completion; mandatory enrolment pending; owner: L&D Manager.,1.00
+14,RMM007,Art.21(2)(i),Is the asset inventory up-to-date?,1.0,Yes,High,"CMDB export CMDB-2026-05-01 (Lansweeper), reconciled monthly; owner: IT Asset Manager; ServiceNow.",4.00
+15,RMM008,Art.21(2)(i),Are background checks performed for sensitive roles?,1.0,Yes,High,Pre-employment screening register HR-VET-2026 (Garda vetting for clinical/privileged roles); owner: HR Director.,4.00
+16,RMM008,Art.21(2)(i),Are access rights revoked immediately upon exit?,1.0,Yes,High,Joiner-Mover-Leaver SOP HR-IT-SOP-003 v2.0; leaver deprovisioning tickets sample SNOW-LVR-2026-Q1; owner: IAM Team.,4.00
+17,RMM009,Art.21(2)(j),Is MFA enforced for ALL remote/admin access?,2.0,No,High,IAM coverage report IAM-RPT-2026-04: MFA on VPN only (62% of accounts); admin consoles pending Okta rollout (project OKTA-2026); owner: IAM Lead.,0.00
+18,RMM009,Art.21(2)(j),Is 'Least Privilege' strictly enforced?,1.0,Yes,High,"Privileged Access Review PAR-2026-Q1 (2026-03-30), AD/LDAP group recertification; owner: IT Security.",4.00
+19,RMM010,Art.21(2),Are physical server rooms secured?,1.0,Yes,High,Data centre access log DC-ACC-2026 (badge + biometric); environmental monitoring report FAC-ENV-2026-Q1; owner: Facilities.,4.00
+20,RMM011,Art.21(2)(h),Is patient data encrypted at rest?,1.5,Partial,High,Encryption Standard CRY-STD-005; EHR database TDE enabled; some legacy file shares unencrypted per GAP-2026-03; owner: CISO.,1.50
+21,RMM011,Art.21(2)(h),Is data encrypted in transit (TLS)?,1.0,Yes,High,"TLS configuration scan SSLSCAN-2026-04 (grade A, TLS 1.2/1.3); SFTP for external transfers; owner: Network Team.",4.00
+22,RMM012,Art.21(2)(d),Do supplier contracts include security SLAs?,1.5,Yes,High,Vendor Contract Register VEN-CON-2026; security schedule and right-to-audit clause in top-10 contracts; owner: Procurement.,6.00
+23,RMM012,Art.21(2)(d),Are critical vendors risk-assessed?,1.0,Yes,High,Third-party risk assessments TPRM-2026 (incl. GG Medicines audit report GGM-AUD-2026-02); owner: Vendor Risk.,4.00
+24,RMM013,Art.21(2)(e),Is security built into system acquisition?,1.0,Partial,High,Secure-by-design checklist SDLC-CHK-009 applied to 2 of 5 recent acquisitions; owner: IT Architecture.,1.00
+25,RMM014,Art.21(2)(b),Is there a documented Incident Response Plan?,1.5,Partial,High,"Incident Response Plan IRP-PLAN-006 v0.9 (draft, pending CISO approval); owner: CISO; DMS/ISMS.",1.50
+26,RMM014,Art.21(2)(b),Has the IRP been tested (tabletop) in 12 months?,1.0,Yes,High,"Tabletop exercise report TTX-2025-11 (ransomware scenario), conducted 2025-11-22; owner: SOC Lead.",4.00
+27,RMM015,Art.23(3),Can you submit an 'Early Warning' within 24h?,2.0,Yes,High,"Incident Reporting Procedure IRP-PROC-007 v1.0 with NCSC early-warning template TMPL-EW-01; named owner SOC Lead, 24/7 on-call rota OPS-ROTA-2026; test submission TEST-EW-2026-01 (2026-03-08, simulated).",8.00
+28,RMM015,Art.21(2)(b),Are detection mechanisms (IDS/SIEM) in place?,1.0,Yes,High,"SIEM onboarding report SIEM-2026-01 (Microsoft Sentinel), 24/7 monitoring; owner: SOC.",4.00
+29,RMM016,Art.21(2)(c),Is there a Business Continuity Plan with RTOs?,1.5,Partial,High,"Business Continuity Plan BCP-PLAN-010 v0.7 (draft): RTO/RPO defined for EHR and network only; PACS, LIS and medication systems pending; owner: BC Manager.",1.50
+30,RMM016,Art.21(2)(c),Are DR procedures tested annually?,1.5,No,High,No full DR failover test on record; last partial test DR-TEST-2024-05 (>12 months old); owner: Infrastructure Lead.,0.00
